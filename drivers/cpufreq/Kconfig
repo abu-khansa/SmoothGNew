@@ -127,9 +127,13 @@ config CPU_FREQ_DEFAULT_GOV_SMARTMAX
 config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
 	bool "intellidemand"
 	select CPU_FREQ_GOV_INTELLIDEMAND
+
+config CPU_FREQ_DEFAULT_GOV_PEGASUSQ
+	bool "pegasusq"
+	select CPU_FREQ_GOV_PEGASUSQ
 	help
-	  Use the CPUFreq governor 'intellidemand' as default. This is
-	  based on Ondemand with browsing detection based on GPU loading
+	  Use the CPUFreq governor 'pegasusq' as default
+
 
 
 config CPU_FREQ_DEFAULT_GOV_BADASS
@@ -305,6 +309,14 @@ config CPU_FREQ_GOV_INTELLIDEMAND
 
 config CPU_FREQ_GOV_PEGASUSQ
 	tristate "'pegasusq' cpufreq policy governor"
+<<<<<<< HEAD
+=======
+
+menu "x86 CPU frequency scaling drivers"
+depends on X86
+source "drivers/cpufreq/Kconfig.x86"
+endmenu
+>>>>>>> 559e8b7... cpufreq: PegasusQ
 
 config CPU_FREQ_GOV_BADASS
 	tristate "'badass' cpufreq policy governor"
