@@ -35,7 +35,11 @@
 
 #define INTELLI_PLUG_MAJOR_VERSION	3
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define INTELLI_PLUG_MINOR_VERSION	9
+=======
+#define INTELLI_PLUG_MINOR_VERSION	8
+>>>>>>> cda4b8f... Squash Intelli_plug from faux123
 =======
 #define INTELLI_PLUG_MINOR_VERSION	8
 >>>>>>> cda4b8f... Squash Intelli_plug from faux123
@@ -57,12 +61,17 @@ static struct workqueue_struct *intelliplug_wq;
 static struct workqueue_struct *intelliplug_boost_wq;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static unsigned int intelli_plug_active = 1;
 <<<<<<< HEAD
 module_param(intelli_plug_active, uint, 0664);
 =======
 module_param(intelli_plug_active, uint, 0644);
 >>>>>>> parent of 532da76... intelli_plug: add perf_boost sysfs entry and clean up permissions (thanks to @faux123) Also bump version to 4.0
+=======
+static unsigned int intelli_plug_active = 0;
+module_param(intelli_plug_active, uint, 0644);
+>>>>>>> cda4b8f... Squash Intelli_plug from faux123
 =======
 static unsigned int intelli_plug_active = 0;
 module_param(intelli_plug_active, uint, 0644);
@@ -213,7 +222,11 @@ static unsigned int calculate_thread_stats(void)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static void __ref intelli_plug_boost_fn(struct work_struct *work)
+=======
+static void __cpuinit intelli_plug_boost_fn(struct work_struct *work)
+>>>>>>> cda4b8f... Squash Intelli_plug from faux123
 =======
 static void __cpuinit intelli_plug_boost_fn(struct work_struct *work)
 >>>>>>> cda4b8f... Squash Intelli_plug from faux123
@@ -268,7 +281,11 @@ static void unplug_cpu(int min_active_cpu)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static void __ref intelli_plug_work_fn(struct work_struct *work)
+=======
+static void __cpuinit intelli_plug_work_fn(struct work_struct *work)
+>>>>>>> cda4b8f... Squash Intelli_plug from faux123
 =======
 static void __cpuinit intelli_plug_work_fn(struct work_struct *work)
 >>>>>>> cda4b8f... Squash Intelli_plug from faux123
@@ -394,6 +411,7 @@ static void screen_off_limit(bool on)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void __ref intelli_plug_perf_boost(bool on)
 {
 	unsigned int cpu;
@@ -413,6 +431,8 @@ void __ref intelli_plug_perf_boost(bool on)
 	}
 }
 
+=======
+>>>>>>> cda4b8f... Squash Intelli_plug from faux123
 =======
 >>>>>>> cda4b8f... Squash Intelli_plug from faux123
 #ifdef CONFIG_POWERSUSPEND
@@ -455,9 +475,15 @@ static void wakeup_boost(void)
 
 #ifdef CONFIG_POWERSUSPEND
 <<<<<<< HEAD
+<<<<<<< HEAD
 static void __ref intelli_plug_resume(struct power_suspend *handler)
 #else
 static void __ref intelli_plug_resume(struct early_suspend *handler)
+=======
+static void __cpuinit intelli_plug_resume(struct power_suspend *handler)
+#else
+static void __cpuinit intelli_plug_resume(struct early_suspend *handler)
+>>>>>>> cda4b8f... Squash Intelli_plug from faux123
 =======
 static void __cpuinit intelli_plug_resume(struct power_suspend *handler)
 #else
