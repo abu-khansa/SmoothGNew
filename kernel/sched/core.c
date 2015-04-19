@@ -2235,15 +2235,6 @@ unsigned long avg_nr_running(void)
 	return sum;
 }
 EXPORT_SYMBOL(avg_nr_running);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3abc19d... Intelli_plug: kernel sched/core: add per cpu nr_running stats
-=======
->>>>>>> 3abc19d... Intelli_plug: kernel sched/core: add per cpu nr_running stats
-
 unsigned long avg_cpu_nr_running(unsigned int cpu)
 {
 	unsigned int seqcnt, ave_nr_running;
@@ -2267,16 +2258,6 @@ unsigned long avg_cpu_nr_running(unsigned int cpu)
 	return ave_nr_running;
 }
 EXPORT_SYMBOL(avg_cpu_nr_running);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f99e6fb... intelli_plug: refactor stats calculation code to be less intrusive
-=======
->>>>>>> 3abc19d... Intelli_plug: kernel sched/core: add per cpu nr_running stats
-=======
->>>>>>> f99e6fb... intelli_plug: refactor stats calculation code to be less intrusive
-=======
->>>>>>> 3abc19d... Intelli_plug: kernel sched/core: add per cpu nr_running stats
 #endif
 
 /*

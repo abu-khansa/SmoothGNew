@@ -309,14 +309,7 @@ config CPU_FREQ_GOV_INTELLIDEMAND
 
 config CPU_FREQ_GOV_PEGASUSQ
 	tristate "'pegasusq' cpufreq policy governor"
-<<<<<<< HEAD
-=======
 
-menu "x86 CPU frequency scaling drivers"
-depends on X86
-source "drivers/cpufreq/Kconfig.x86"
-endmenu
->>>>>>> 559e8b7... cpufreq: PegasusQ
 
 config CPU_FREQ_GOV_BADASS
 	tristate "'badass' cpufreq policy governor"
