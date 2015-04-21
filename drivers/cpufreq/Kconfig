@@ -109,6 +109,18 @@ config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads.
 
+config CPU_FREQ_DEFAULT_GOV_ZZMOVE
+        bool "zzmove"
+        select CPU_FREQ_GOV_ZZMOVE
+        help
+          Use the CPUFreq governor 'zzmove' as default.
+
+config CPU_FREQ_DEFAULT_GOV_IMPULSE
+        bool "gov_name_impulse"
+        select CPU_FREQ_GOV_IMPULSE
+        help
+          Use the CPUFreq governor 'impulse' as default.
+
 config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
 	bool "intelliactive"
 	select CPU_FREQ_GOV_INTELLIACTIVE
@@ -216,6 +228,18 @@ config CPU_FREQ_GOV_ONDEMAND
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
+
+config CPU_FREQ_GOV_ZZMOVE
+        tristate "'zzmove' cpufreq governor"
+        depends on CPU_FREQ
+        help
+         'zzmove' - a custom governor!
+
+config CPU_FREQ_GOV_IMPULSE
+        tristate "'impulse' cpufreq governor"
+        depends on CPU_FREQ
+        help
+        'impulse' - a custom governor!
 
 config CPU_FREQ_GOV_INTERACTIVE
 	tristate "'interactive' cpufreq policy governor"
