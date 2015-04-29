@@ -404,9 +404,6 @@ static void cpufreq_impulse_timer(unsigned long data)
 	cpu_load = loadadjfreq / pcpu->policy->cur;
 	boosted = boost_val || now < boostpulse_endtime ||
 		  cpu_load >= go_hispeed_load;
-=======
-			check_cpuboost(data) || cpu_load >= go_hispeed_load;
-	this_hispeed_freq = max(hispeed_freq, pcpu->policy->min);
 
 	if (cpu_load <= go_lowspeed_load && !boost_val) {
 		boosted = false;
@@ -638,9 +635,6 @@ static int cpufreq_impulse_speedchange_task(void *data)
 								max_freq,
 								CPUFREQ_RELATION_H);
 				else
-					__cpufreq_driver_target(pcpu->policy,
-								max_freq,
-								CPUFREQ_RELATION_C);
 
 				for_each_cpu(j, pcpu->policy->cpus) {
 					pjcpu = &per_cpu(cpuinfo, j);
